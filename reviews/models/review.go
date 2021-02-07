@@ -1,6 +1,9 @@
 package models
 
-import "time"
+import (
+	"errors"
+	"time"
+)
 
 // Review represent an anon review from some website
 type Review struct {
@@ -14,4 +17,12 @@ type Review struct {
 type CreateReviewCMD struct {
 	Stars   int    `json:"stars"`
 	Comment string `json:"comment"`
+}
+
+func (cmd *CreateReviewCMD) validate() error {
+	if cmd.Stars < 1 || cmd.Stars > 5 {
+		return errors.New("stars must be between 1 - 5")
+	}
+
+	return nil
 }
