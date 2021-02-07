@@ -6,7 +6,7 @@ type Smartphone struct {
 	Name          string
 	Price         int
 	CountryOrigin string
-	Os            string
+	OS            string
 }
 
 // CreateSmartphoneCMD command to create a new smartphone
