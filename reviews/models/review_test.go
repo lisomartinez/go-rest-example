@@ -53,7 +53,7 @@ func Test_shouldFailWithWrongCommentLength(t *testing.T) {
 	review := NewReview(8, RandomString(500))
 	err := review.validate()
 	if err == nil {
-		t.Error("should fail with 400 max chars")
+		t.Error("should fail with 400 max  chars")
 		t.Fail()
 	}
 }
