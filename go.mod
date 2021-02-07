@@ -1,4 +1,4 @@
-module "go-rest-example"
+module "github.com/lisomartinez/go-rest-example"
 
 go 1.15
 
