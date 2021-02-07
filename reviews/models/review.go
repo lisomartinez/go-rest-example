@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+const maxLengthInComments = 400
+
 // Review represent an anon review from some website
 type Review struct {
 	Id      int64
@@ -20,8 +22,13 @@ type CreateReviewCMD struct {
 }
 
 func (cmd *CreateReviewCMD) validate() error {
+
 	if cmd.Stars < 1 || cmd.Stars > 5 {
 		return errors.New("stars must be between 1 - 5")
+	}
+
+	if len(cmd.Comment) > maxLengthInComments {
+		return errors.New("comment must be less than 400 chars")
 	}
 
 	return nil
