@@ -9,7 +9,8 @@ type Smartphone struct {
 	Os            string
 }
 
-type CreateSmartPhoneCMD struct {
+// CreateSmartphoneCMD command to create a new smartphone
+type CreateSmartphoneCMD struct {
 	Name          string `json:"name"`
 	Price         int    `json:"price"`
 	CountryOrigin string `json:"country_origin"`
