@@ -14,7 +14,7 @@ func NewSqlClient(source string) *MySqlClient {
 	db, err := sql.Open("mysql", source)
 	if err != nil {
 		logs.Log().Errorf("cannot create db tenant: %s", err.Error())
-		panic("cannot create db tenant")
+		panic(err)
 	}
 
 	err = db.Ping()
